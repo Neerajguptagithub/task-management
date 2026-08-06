@@ -62,7 +62,7 @@ const EmployeeDashboard: React.FC = () => {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
+      <div className="employee-stat-grid" style={{ gap: '1rem', marginBottom: '2rem' }}>
         {[
           { label: 'To Do', value: todo, color: '#94a3b8', bg: 'rgba(100,116,139,0.15)' },
           { label: 'In Progress', value: inProgress, color: '#fbbf24', bg: 'rgba(245,158,11,0.15)' },
@@ -124,6 +124,7 @@ const EmployeeDashboard: React.FC = () => {
                         display: 'flex', alignItems: 'center', gap: '0.375rem',
                         padding: '0.375rem 0.625rem', borderRadius: '0.375rem',
                         fontSize: '0.75rem', fontWeight: 500, cursor: 'pointer',
+                        whiteSpace: 'nowrap',
                         border: task.status === value ? '1px solid var(--color-accent)' : '1px solid var(--color-border)',
                         background: task.status === value ? 'rgba(99,102,241,0.15)' : 'transparent',
                         color: task.status === value ? 'var(--color-accent-light)' : 'var(--color-text-muted)',

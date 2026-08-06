@@ -28,7 +28,7 @@ const AdminDashboard: React.FC = () => {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+      <div className="stat-card-grid" style={{ gap: '1rem', marginBottom: '2rem' }}>
         <StatCard title="Total Employees" value={stats.totalEmployees} icon={Users} color="#818cf8" bgColor="rgba(99,102,241,0.15)" />
         <StatCard title="Total Tasks" value={stats.totalTasks} icon={ClipboardList} color="#fbbf24" bgColor="rgba(245,158,11,0.15)" />
         <StatCard title="Completed" value={stats.tasksByStatus.completed} icon={CheckCircle} color="#34d399" bgColor="rgba(16,185,129,0.15)" subtitle="tasks done" />
@@ -36,7 +36,7 @@ const AdminDashboard: React.FC = () => {
         <StatCard title="Todo" value={stats.tasksByStatus.todo} icon={AlertCircle} color="#f87171" bgColor="rgba(239,68,68,0.15)" subtitle="tasks pending" />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+      <div className="dashboard-grid-2" style={{ gap: '1.5rem' }}>
         <div className="card">
           <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: 'var(--color-text-primary)' }}>
             Tasks by Priority
