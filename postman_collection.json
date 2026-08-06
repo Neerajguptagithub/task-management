@@ -1,0 +1,145 @@
+{
+  "info": {
+    "name": "TaskFlow API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "taskflow-api-collection"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000/api", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/auth/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"John Employee\",\"email\":\"john@example.com\",\"password\":\"password123\",\"role\":\"employee\"}"
+            }
+          }
+        },
+        {
+          "name": "Login (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/auth/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"admin@example.com\",\"password\":\"Admin@123\"}"
+            }
+          }
+        },
+        {
+          "name": "Get Me",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/auth/me"
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/logout"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin - Employees",
+      "item": [
+        {
+          "name": "Get All Employees",
+          "request": { "method": "GET", "url": "{{baseUrl}}/admin/employees" }
+        },
+        {
+          "name": "Create Employee",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/admin/employees",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Jane Doe\",\"email\":\"jane@example.com\",\"password\":\"password123\"}"
+            }
+          }
+        },
+        {
+          "name": "Delete Employee",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/employees/:id"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin - Tasks",
+      "item": [
+        {
+          "name": "Get All Tasks",
+          "request": { "method": "GET", "url": "{{baseUrl}}/admin/tasks" }
+        },
+        {
+          "name": "Create Task",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/admin/tasks",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"title\":\"Design Landing Page\",\"description\":\"Create a modern landing page design\",\"assignedTo\":\"EMPLOYEE_ID_HERE\",\"priority\":\"high\",\"status\":\"todo\",\"dueDate\":\"2026-12-31\"}"
+            }
+          }
+        },
+        {
+          "name": "Update Task",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/admin/tasks/:id",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"in_progress\",\"priority\":\"medium\"}"
+            }
+          }
+        },
+        {
+          "name": "Delete Task",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/admin/tasks/:id" }
+        },
+        {
+          "name": "Get Dashboard Stats",
+          "request": { "method": "GET", "url": "{{baseUrl}}/admin/stats" }
+        }
+      ]
+    },
+    {
+      "name": "Employee",
+      "item": [
+        {
+          "name": "Get My Tasks",
+          "request": { "method": "GET", "url": "{{baseUrl}}/employee/tasks" }
+        },
+        {
+          "name": "Update Task Status",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/employee/tasks/:id/status",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"in_progress\"}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
