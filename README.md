@@ -6,10 +6,10 @@ A full-stack MERN application where **Admins** manage employees and assign tasks
 
 | Service | URL |
 |---|---|
-| Frontend | _Add your Vercel URL here_ |
-| Backend API | _Add your Render URL here_ |
+| Frontend | https://task-management-phi-hazel.vercel.app |
+| Backend API | https://task-management-m520.onrender.com/api |
 
-**Test Credentials:**
+**Admin Test Credentials:**
 | Role | Email | Password |
 |---|---|---|
 | Admin | admin@gmail.com | Admin@123 |
@@ -87,7 +87,7 @@ task-management/
 
 ```bash
 # 1. Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/Neerajguptagithub/task-management.git
 cd task-management
 
 # 2. Start all services (MongoDB + Backend + Frontend)
